@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="Description" content="VéloToulouse, l'application de réservation de vélo urbain à Toulouse.">
+    <meta name="author" content="Bertrand Bourion">
+    <meta name="viewport" content="width=device-width">
+    <title>Réservation de vélo à Toulouse</title>
+
+    <!-- CSS Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+
+    <!-- JS Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- OPEN GRAPH -->
+
+    <meta property="og:title" content="Réservation de vélo à Toulouse" />
+    <meta property="og:type" content="Réservation de vélo" />
+    <meta property="og:image" content="images/logo-velo.png>">
+    <meta property="og:url" content="http://www.yourwebangency.fr">
+
+
+    <!-- TWITTER CARDS -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="http://www.yourwebagency.fr" />
+    <meta name="twitter:title" content="Réservation de vélo" />
+    <meta name="twitter:description" content="Réservation de vélo à Toulouse" />
+    <meta name="twitter:image" content="images/logo-velo.png>" />
+
+</head>
+
+<body>
+
+    <header>
+        <img src="images/logo-velo.png" alt="logo vélo">
+        <h1>Réservation de vélo en ligne</h1>
+    </header>
+
+    <section id="slider">
+
+        <div id="animation">
+
+        </div>
+
+        <div id="icons_container">
+            <i class="fas fa-arrow-alt-circle-left fa-2x"></i>
+            <img id="left_arrow_key" class="arrow_keys" src="images/icons/arrow-left-icon.png" alt="left arrow">
+            <i class="fas fa-play-circle fa-2x"></i>
+            <i class="fas fa-pause-circle fa-2x"></i>
+            <img id="right_arrow_key" class="arrow_keys" src="images/icons/arrow-right-icon.png" alt="right arrow">
+            <i class="fas fa-arrow-alt-circle-right fa-2x"></i>
+        </div>
+
+    </section>
+
+    <section id="map_container">
+
+        <div id="map_wrapper">
+            <p id="choose_station">
+                Choisissez une station sur la carte
+            </p>
+            <div id="map"></div>
+        </div>
+
+        <aside id="aside">
+            <h2>Détails de la station</h2>
+            <h3 id="first_h3">Nom</h3>
+            <p id="station_name">""</p>
+            <h3>Adresse</h3>
+            <p id="address">""</p>
+            <h3>Nombre de vélos disponibles</h3>
+            <p id="bikes_nb">""</p>
+            <h3>Nombre de places libres</h3>
+            <p id="stands_nb">""</p>
+
+            <form>
+                <label id="nom" for="name">Nom (obligatoire) : </label><br>
+                <input id="name" type="text" name="name"><br><br>
+                <label id="prenom" for="first_name">Prénom (obligatoire) : </label><br>
+                <input id="first_name" type="text" name="first_name"><br>
+            </form>
+            <button id="book">Réserver</button>
+
+            <div id="canvas">
+                <p id="sign">Signature</p>
+                <canvas id="cvs"></canvas><br>
+                <div id="buttons">
+                    <button id="reset">Effacer</button>
+                    <button id="confirm">Valider</button>
+                </div>
+                <p id="signRequired"></p>
+            </div>
+        </aside>
+    </section>
+
+    <div id="infos">
+        <p id="infos_resa"></p>
+        <p id="compteur"></p>
+        <button id="cancel">Annuler</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script src="js/Slider.js"></script>
+    <script src="js/Canvas.js"></script>
+    <script src="js/Map.js"></script>
+    <script src="js/Reservation.js"></script>
+    <script src="js/App.js"></script>
+
+</body>
+
+</html>
